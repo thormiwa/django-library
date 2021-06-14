@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework import filters
 from . import models
 from . import serializers
 
@@ -11,6 +12,8 @@ class UserDetail(generics.RetrieveAPIView):
     serializer_class = serializers.UserSerializer
 
 class BookList(generics.ListCreateAPIView):
+    search_fields = ['title']
+    filter_backends = (filters.SearchFilter, )
     queryset = models.Book.objects.all()
     serializer_class = serializers.BookSerializer
 
