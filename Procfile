@@ -1,1 +1,1 @@
-web: gunicorn alulibrary.wsgi --log-file -
+web: gunicorn alulibrary.wsgi
