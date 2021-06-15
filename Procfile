@@ -1,1 +1,1 @@
-web: gunicorn alulibrary.wsgi
+web: gunicorn alu.wsgi
