@@ -7,7 +7,7 @@ from django.conf import settings
 class CustomUser(AbstractUser):
     username = models.CharField(blank=True, null=True, max_length=100)
     email = models.EmailField(unique=True)
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = ['username', ]
     USERNAME_FIELD = 'email'
 
     def __str__(self):
